@@ -1,3 +1,7 @@
+import AboutCard from "@/components/AboutCard/AboutCard";
+
 export default function About() {
-    return <h1>About</h1>
+  return (
+    <AboutCard />
+  )
 }
