@@ -1,0 +1,35 @@
+.button {
+    border: 0 solid;
+    border-radius: 4px;
+    /* Orange */
+}
+
+.buttonWithIcon {
+    padding: 4px;
+    background: #FF5500;
+}
+
+.buttonWithIcon:active {
+    background: #FF5500;
+}
+
+.buttonWithIcon:hover {
+    background: #E94E00;
+}
+
+.buttonWithIcon:disabled {
+    background: #FFA375;
+}
+
+.buttonWithText {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 10px 16px;
+    color: white;
+    background: #FF5500;
+}
+
+.buttonWithText:hover {
+    background: #E94E00;
+}
