@@ -1,9 +1,9 @@
 .container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 24px;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    background-color: white;
 }
 
 .info {
@@ -11,17 +11,18 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+    width: -webkit-fill-available;
 }
 
 .description {
     display: flex;
     flex-direction: column;
     padding: 0;
-    gap: 8px;
+    gap: 0.5rem;
 }
 
 .title {
-    font-family: SF Pro Text, serif;
+    font-family: Roboto, sans-serif;
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: 0;
@@ -29,7 +30,7 @@
 }
 
 .genre {
-    font-family: SF Pro Text, serif;
+    font-family: Roboto, sans-serif;
     font-size: 1rem;
     font-style: italic;
     font-weight: 400;
@@ -38,6 +39,8 @@
 }
 
 .buttonsBlock {
+    display: flex;
+    align-items: flex-start;
     padding: 0;
-    gap: 8px;
+    gap: 0.5rem;
 }

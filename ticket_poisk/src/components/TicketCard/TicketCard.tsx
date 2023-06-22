@@ -11,6 +11,14 @@ interface MovieProps {
 export default function TicketCard(movie: MovieProps) {
   const [countOfTickets, setCountOfTickets] = useState(0);
 
+  const handlePlusClick = () => {
+    setCountOfTickets(count => count - 1);
+  }
+
+  const handleMinusClick = () => {
+    setCountOfTickets(count => count + 1);
+  }
+
   return (
     <article className={ styles.container }>
       <img src={ movie.posterUrl } alt='poster' width='100' height='120'/>
@@ -24,9 +32,9 @@ export default function TicketCard(movie: MovieProps) {
           </div>
         </div>
         <div className={ styles.buttonsBlock }>
-          <Button text="Нет" />
+          <Button iconUrl="/minus.svg" onClick={handleMinusClick} />
           { countOfTickets }
-          <Button iconUrl="/plus.svg"/>
+          <Button iconUrl="/plus.svg" onClick={handlePlusClick} />
         </div>
       </div>
     </article>
