@@ -9,6 +9,7 @@ interface TicketProps {
   title: string,
   genre: string,
   posterUrl: string,
+  showDeleteButton: boolean,
 }
 
 export default function TicketCard(ticketProps: TicketProps) {
@@ -47,6 +48,12 @@ export default function TicketCard(ticketProps: TicketProps) {
           { countOfTickets }
           <Button iconUrl="/plus.svg" onClick={handlePlusClick} />
         </div>
+        {
+          ticketProps.showDeleteButton &&
+          <div className={ styles.deleteButtonBlock }>
+            <Button iconUrl="/close.svg" onClick={() => {}} isDeleteButton={ ticketProps.showDeleteButton }/>
+          </div>
+        }
       </div>
     </article>
   )

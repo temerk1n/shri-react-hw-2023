@@ -10,9 +10,9 @@
 .info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 0;
     flex-grow: 1;
+    gap: 1.5rem;
 }
 
 .description {
@@ -20,6 +20,7 @@
     flex-direction: column;
     padding: 0;
     gap: 0.5rem;
+    flex-grow: 1;
 }
 
 .title {
@@ -44,4 +45,10 @@
     align-items: flex-start;
     padding: 0;
     gap: 0.5rem;
+}
+
+.deleteButtonBlock {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
 }

@@ -6,14 +6,17 @@ interface ButtonProps {
   text?: string,
   iconUrl?: string,
   onClick: () => void,
+  isDeleteButton?: boolean,
 }
 
-export default function Button({ text, iconUrl, onClick }: ButtonProps) {
+export default function Button({ text, iconUrl, onClick, isDeleteButton }: ButtonProps) {
+  const size = "12";
+
   return (
-    <button className={ classNames(styles.button, iconUrl ? styles.buttonWithIcon : styles.buttonWithText) } onClick={ onClick } >
+    <button className={ classNames(styles.button, isDeleteButton ? styles.deleteButton : iconUrl ? styles.buttonWithIcon : styles.buttonWithText) } onClick={ onClick } >
       {
         iconUrl ?
-          <Image src={ iconUrl } alt="" width="9" height="9" /> :
+          <Image src={ iconUrl } alt="" width={size} height={size} /> :
           text
       }
     </button>
