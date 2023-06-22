@@ -2,21 +2,21 @@ import styles from "./TicketCard.module.css"
 import Button from "@/components/Button/Button";
 import {useState} from "react";
 
-interface MovieProps {
+interface TicketProps {
   title: string,
   genre: string,
   posterUrl: string,
 }
 
-export default function TicketCard(movie: MovieProps) {
+export default function TicketCard(movie: TicketProps) {
   const [countOfTickets, setCountOfTickets] = useState(0);
 
   const handlePlusClick = () => {
-    setCountOfTickets(count => count - 1);
+    setCountOfTickets(count => count + 1);
   }
 
   const handleMinusClick = () => {
-    setCountOfTickets(count => count + 1);
+    setCountOfTickets(count => count - 1);
   }
 
   return (
