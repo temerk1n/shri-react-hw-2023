@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
-    align-self: stretch;
 }
 
 .input {
@@ -20,7 +19,30 @@
     font-size: 0.875rem;
 }
 
-.input:focus {
+.input:focus-visible {
+    outline: none;
     color: #1B1F23;
     border: 1px solid #F50;
+}
+
+.input:focus-visible::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #1B1F23;
+}
+.input:focus-visible:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #1B1F23;
+    opacity:  1;
+}
+.input:focus-visible::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #1B1F23;
+    opacity:  1;
+}
+.input:focus-visible:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #1B1F23;
+}
+.input:focus-visible::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #1B1F23;
+}
+
+.input:focus-visible::placeholder { /* Most modern browsers support this now. */
+    color:    #1B1F23;
 }
