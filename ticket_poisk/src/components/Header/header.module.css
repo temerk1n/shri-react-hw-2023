@@ -7,4 +7,6 @@
     font-weight: 700;
     font-size: 2rem;
     color: white;
+    position: fixed;
+    width: 100%;
 }
