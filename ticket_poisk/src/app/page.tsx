@@ -1,14 +1,27 @@
 "use client"
-import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import TicketCard from "@/components/TicketCard/TicketCard";
+import Footer from "@/components/Footer/Footer";
+import { useEffect, useState } from "react";
+import TicketCardList from "@/components/TicketCardList/TicketCardList";
+import getAllMovies from "@/api/getAllMovies";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import styles from './page.module.css'
 
 export default function Home() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    getAllMovies()
+      .then(r => setMovies(r));
+  }, [])
 
   return (
     <>
       <Header />
-      <TicketCard title="Властелин колец: Братство Кольца" genre="Фэнтези" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" />
+      <div className={styles.content}>
+        <SearchBar />
+        <TicketCardList movies={movies} />
+      </div>
       <Footer />
     </>
   );
