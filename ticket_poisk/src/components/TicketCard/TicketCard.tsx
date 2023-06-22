@@ -2,6 +2,7 @@ import styles from "./TicketCard.module.css"
 import Button from "@/components/Button/Button";
 import {useState} from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface TicketProps {
   id: string
@@ -29,7 +30,7 @@ export default function TicketCard(ticketProps: TicketProps) {
 
   return (
     <article className={ styles.container }>
-      <img src={ ticketProps.posterUrl } alt='poster' width='100' height='120'/>
+      <Image src={ ticketProps.posterUrl } alt='poster' width='100' height='120'/>
       <div className={ styles.info }>
         <div className={ styles.description }>
           <div className={ styles.title }>
