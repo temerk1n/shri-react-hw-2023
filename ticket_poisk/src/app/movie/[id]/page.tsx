@@ -6,6 +6,6 @@ interface MovieProps {
 
 export default function Movie(props: MovieProps) {
   return (
-    <h1>Movie</h1>
+    <h1>Movie {props.params.id}</h1>
   )
 }

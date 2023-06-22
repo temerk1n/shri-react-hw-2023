@@ -1,0 +1,16 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.44rem;
+    margin-top: 85px;
+    padding: 1.5rem 2rem;
+    background: #F5F5F5;
+    flex-grow: 1;
+}

@@ -1,3 +1,5 @@
+"use client"
+
 import MenuAccordion from "@/components/MenuAccordion/MenuAccordion";
 
 export default function QA() {
