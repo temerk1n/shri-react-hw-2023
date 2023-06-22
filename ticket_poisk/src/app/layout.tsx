@@ -1,11 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { Metadata } from "next";
 import styles from "./layout.module.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Билетопоиск',
@@ -19,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body>
       <div className={styles.page}>
         <Header />
         <div className={styles.content}>
