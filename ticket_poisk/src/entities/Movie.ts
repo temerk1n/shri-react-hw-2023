@@ -10,6 +10,16 @@ interface MovieProps {
   reviewIds: string[],
 }
 
+function translate(word: string): string {
+  switch (word) {
+    case "action": return "Экшн"
+    case "comedy": return "Комедия"
+    case "fantasy": return "Фэнтези"
+    case "horror": return "Хоррор"
+    default: return ""
+  }
+}
+
 export default class Movie {
   public readonly title: string;
   public readonly posterUrl: string;
@@ -26,7 +36,7 @@ export default class Movie {
     this.posterUrl = posterUrl;
     this.releaseYear = releaseYear;
     this.description = description;
-    this.genre = genre;
+    this.genre = translate(genre);
     this.id = id;
     this.rating = rating;
     this.director = director;
