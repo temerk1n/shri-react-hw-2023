@@ -9,7 +9,7 @@ interface TicketCardListProps {
 export default function TicketCardList({movies}: TicketCardListProps) {
 
   const tickets = movies.map((movie) => {
-    return <TicketCard title={movie.title} genre={movie.genre} posterUrl={movie.posterUrl} key={movie.id}/>
+    return <TicketCard id={movie.id} title={movie.title} genre={movie.genre} posterUrl={movie.posterUrl} key={movie.id}/>
   })
 
 
