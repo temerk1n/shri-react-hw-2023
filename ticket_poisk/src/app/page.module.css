@@ -1,0 +1,7 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.44rem;
+    padding: 1.5rem 2rem;
+    background: #F5F5F5;
+}
