@@ -1,4 +1,5 @@
 import httpClient from "@/api/httpClient";
+import Movie from "@/entities/Movie";
 
 const getMovieById = (id: string) => httpClient
     .get('/movie', {
@@ -6,6 +7,6 @@ const getMovieById = (id: string) => httpClient
             movieId: id,
         }
     })
-    .then((response) => response.data);
+    .then((response) => new Movie(response.data));
 
 export default getMovieById;
