@@ -11,7 +11,7 @@ interface MenuItemProps {
   content?: string,
 }
 
-export function MenuAccordion({children}: MenuProps) {
+function MenuAccordion({children}: MenuProps) {
   return (
     <div className={styles.content}>
       {children}
@@ -29,12 +29,15 @@ MenuAccordion.Item = function Item({title, content}: MenuItemProps) {
   return (
     <div className={styles.item}>
       <div className={styles.title}>
-        <h2>{title}</h2>
         {
-          content &&
-          <button onClick={toggle} className={styles.button}>
-            <Image src={isShowing ? "/arrowUp.svg" : "/arrowDown.svg"} alt="arrow" height="32" width="32"/>
-          </button>
+          content ?
+            <>
+              <h2>{title}</h2>
+              <button onClick={toggle} className={styles.button}>
+                <Image src={isShowing ? "/arrowUp.svg" : "/arrowDown.svg"} alt="arrow" height="32" width="32"/>
+              </button>
+            </> :
+            <h1>{title}</h1>
         }
       </div>
       {
@@ -44,3 +47,5 @@ MenuAccordion.Item = function Item({title, content}: MenuItemProps) {
     </div>
   )
 }
+
+export default MenuAccordion;

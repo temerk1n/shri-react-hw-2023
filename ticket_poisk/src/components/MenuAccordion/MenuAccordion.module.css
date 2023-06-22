@@ -21,6 +21,10 @@
     align-items: center;
 }
 
+.title > h1 {
+    margin: 0;
+}
+
 .title > h2 {
     margin: 0;
 }
