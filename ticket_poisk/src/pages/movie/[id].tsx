@@ -1,9 +1,11 @@
 interface MovieProps {
-  id: string,
+  params: {
+    id: string,
+  }
 }
 
-export default function Movie({ id }: MovieProps) {
+export default function Movie(props: MovieProps) {
   return (
-    <h1>Movie {id}</h1>
+    <h1>Movie</h1>
   )
 }
