@@ -1,6 +1,6 @@
 .buttonsBlock {
-    display: flex;
-    align-items: flex-start;
-    padding: 0;
-    gap: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0.5rem;
 }

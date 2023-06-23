@@ -1,12 +1,12 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333333;
-    padding: 1.5rem 2rem;
-    font-family: "Roboto", serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: white;
-    position: fixed;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333333;
+  padding: 1.5rem 2rem;
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: white;
+  position: fixed;
+  width: 100%;
 }

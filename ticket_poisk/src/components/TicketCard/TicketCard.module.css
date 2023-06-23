@@ -1,36 +1,36 @@
 .info {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    flex-grow: 1;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  flex-grow: 1;
+  gap: 1.5rem;
 }
 
 .description {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    gap: 0.5rem;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0.5rem;
+  flex-grow: 1;
 }
 
 .title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0;
-    text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: left;
 }
 
 .genre {
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-align: left;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: left;
 }
 
 .deleteButtonBlock {
-    display: flex;
-    align-items: flex-start;
-    padding: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
 }

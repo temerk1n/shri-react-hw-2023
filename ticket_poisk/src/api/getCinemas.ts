@@ -1,13 +1,13 @@
 import baseUrl from "@/api/baseUrl";
 
 async function getCinemas() {
-  const res = await fetch(baseUrl + '/cinemas')
+  const res = await fetch(baseUrl + "/cinemas");
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    throw new Error("Failed to fetch data");
   }
 
-  return res.json()
+  return res.json();
 }
 
 export default getCinemas;

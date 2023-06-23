@@ -1,9 +1,10 @@
-import './globals.css'
+import "./globals.css";
 import { Metadata } from "next";
 import styles from "./layout.module.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import {Roboto} from "next/font/google"
+import { Roboto } from "next/font/google";
+import { ReactNode } from "react";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -13,26 +14,20 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Билетопоиск',
-  description: 'Крупнейший сервис о кино в рунете',
-}
+  title: "Билетопоиск",
+  description: "Крупнейший сервис о кино в рунете",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru">
-      <body className={ roboto.className }>
+      <body className={roboto.className}>
         <div className={styles.page}>
           <Header />
-            <div className={styles.content}>
-              {children}
-            </div>
+          <div className={styles.content}>{children}</div>
           <Footer />
         </div>
       </body>
     </html>
-  )
+  );
 }

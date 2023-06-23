@@ -1,22 +1,27 @@
 interface MovieProps {
-  title: string,
-  posterUrl: string,
-  releaseYear: number,
-  description: string,
-  genre: string,
-  id: string,
-  rating: number,
-  director: string,
-  reviewIds: string[],
+  title: string;
+  posterUrl: string;
+  releaseYear: number;
+  description: string;
+  genre: string;
+  id: string;
+  rating: number;
+  director: string;
+  reviewIds: string[];
 }
 
 function translate(word: string): string {
   switch (word) {
-    case "action": return "Экшн"
-    case "comedy": return "Комедия"
-    case "fantasy": return "Фэнтези"
-    case "horror": return "Хоррор"
-    default: return ""
+    case "action":
+      return "Экшн";
+    case "comedy":
+      return "Комедия";
+    case "fantasy":
+      return "Фэнтези";
+    case "horror":
+      return "Хоррор";
+    default:
+      return "";
   }
 }
 
@@ -31,7 +36,17 @@ export default class Movie {
   public readonly director: string;
   public readonly reviewIds: string[];
 
-  constructor({title, posterUrl, releaseYear, description, genre, id, rating, director, reviewIds}: MovieProps) {
+  constructor({
+    title,
+    posterUrl,
+    releaseYear,
+    description,
+    genre,
+    id,
+    rating,
+    director,
+    reviewIds,
+  }: MovieProps) {
     this.title = title;
     this.posterUrl = posterUrl;
     this.releaseYear = releaseYear;

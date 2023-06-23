@@ -1,13 +1,13 @@
 import baseUrl from "@/api/baseUrl";
 
 async function getReviewsByMovieId(id: string) {
-  const res = await fetch(baseUrl + '/reviews?movieId=' + id)
+  const res = await fetch(baseUrl + "/reviews?movieId=" + id);
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    throw new Error("Failed to fetch data");
   }
 
-  return res.json()
+  return res.json();
 }
 
 export default getReviewsByMovieId;

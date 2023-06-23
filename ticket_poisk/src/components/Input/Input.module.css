@@ -1,48 +1,54 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
 }
 
 .input {
-    display: flex;
-    padding: 0.625rem 1rem;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: stretch;
+  display: flex;
+  padding: 0.625rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
 
-    border-radius: 8px;
-    border: 1px solid #E1E3E6;
-    background: #FFF;
+  border-radius: 8px;
+  border: 1px solid #e1e3e6;
+  background: #fff;
 
-    font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .input:focus-visible {
-    outline: none;
-    color: #1B1F23;
-    border: 1px solid #F50;
+  outline: none;
+  color: #1b1f23;
+  border: 1px solid #f50;
 }
 
-.input:focus-visible::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #1B1F23;
+.input:focus-visible::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #1b1f23;
 }
-.input:focus-visible:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #1B1F23;
-    opacity:  1;
+.input:focus-visible:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #1b1f23;
+  opacity: 1;
 }
-.input:focus-visible::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #1B1F23;
-    opacity:  1;
+.input:focus-visible::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #1b1f23;
+  opacity: 1;
 }
-.input:focus-visible:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:    #1B1F23;
+.input:focus-visible:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #1b1f23;
 }
-.input:focus-visible::-ms-input-placeholder { /* Microsoft Edge */
-    color:    #1B1F23;
+.input:focus-visible::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #1b1f23;
 }
 
-.input:focus-visible::placeholder { /* Most modern browsers support this now. */
-    color:    #1B1F23;
+.input:focus-visible::placeholder {
+  /* Most modern browsers support this now. */
+  color: #1b1f23;
 }
