@@ -1,14 +1,14 @@
 import styles from "./Container.module.css";
 import { ReactNode } from "react";
-import classNames from "classnames";
 import { Property } from "csstype";
 import FlexDirection = Property.FlexDirection;
 
 interface ContainerProps {
   children: ReactNode;
   flexDirection: FlexDirection;
-  gap: string;
+  gap?: string;
   width?: string;
+  justifyContent?: string;
 }
 
 export default function Container({
@@ -16,11 +16,17 @@ export default function Container({
   flexDirection,
   gap,
   width,
+  justifyContent,
 }: ContainerProps) {
   return (
     <article
-      className={classNames(styles.container, flexDirection)}
-      style={{ gap: gap, flexDirection: flexDirection, width: width }}
+      className={styles.container}
+      style={{
+        gap: gap,
+        flexDirection: flexDirection,
+        width: width,
+        justifyContent: justifyContent,
+      }}
     >
       {children}
     </article>

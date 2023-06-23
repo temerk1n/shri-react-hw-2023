@@ -9,6 +9,7 @@
 .content {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   gap: 1.5rem;
   margin-top: 85px;
   padding: 1.5rem 2rem;
