@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ReactNode, useState } from "react";
 import styles from "./MenuAccordion.module.css"
+import Container from "@/components/Container/Container";
 
 interface MenuProps {
   children: ReactNode,
@@ -27,7 +28,7 @@ MenuAccordion.Item = function Item({title, content}: MenuItemProps) {
   }
 
   return (
-    <div className={styles.item}>
+    <Container flexDirection="column" gap="1rem">
       <div className={styles.title}>
         {
           content ?
@@ -44,7 +45,7 @@ MenuAccordion.Item = function Item({title, content}: MenuItemProps) {
         content &&
         <p style={{ display: isShowing ? "block" : "none" }}>{content}</p>
       }
-    </div>
+    </Container>
   )
 }
 

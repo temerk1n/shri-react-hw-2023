@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.container-row {
+    flex-direction: row;
+}
+
+.container-column {
+    flex-direction: column;
+}

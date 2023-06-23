@@ -22,18 +22,6 @@
     align-items: center;
 }
 
-.title > h1 {
-    margin: 0;
-}
-
-.title > h2 {
-    margin: 0;
-}
-
-.item > p {
-    margin: 0;
-}
-
 .button {
     border: 0 solid;
     border-radius: 4px;
