@@ -1,16 +1,10 @@
-"use client"
-import { useEffect, useState } from "react";
 import TicketCardList from "@/components/TicketCardList/TicketCardList";
-import getAllMovies from "@/api/getAllMovies";
 import SearchBar from "@/components/SearchBar/SearchBar";
+import getAllMovies from "@/api/getAllMovies";
+import Movie from "@/entities/Movie";
 
-export default function Home() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    getAllMovies()
-      .then(r => setMovies(r));
-  }, [])
+export default async function Home() {
+  let movies: Movie[] = await getAllMovies();
 
   return (
     <>

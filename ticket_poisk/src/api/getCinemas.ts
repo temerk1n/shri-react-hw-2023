@@ -1,8 +1,13 @@
-import httpClient from "@/api/httpClient";
-import Cinema from "@/entities/Cinema";
+import baseUrl from "@/api/baseUrl";
 
-const getCinemas = () => httpClient
-    .get('/cinemas')
-    .then((response) => response.data.map((cinema: Cinema) => new Cinema(cinema)));
+async function getCinemas() {
+  const res = await fetch(baseUrl + '/cinemas')
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json()
+}
 
 export default getCinemas;

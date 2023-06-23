@@ -1,3 +1,4 @@
+"use client"
 import styles from "./TicketCard.module.css"
 import Button from "@/components/Button/Button";
 import {useState} from "react";

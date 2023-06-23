@@ -1,12 +1,13 @@
-import httpClient from "@/api/httpClient";
-import Review from "@/entities/Review";
+import baseUrl from "@/api/baseUrl";
 
-const getReviewsByMovieId = (id: string) => httpClient
-    .get('/reviews', {
-        params: {
-            movieId: id,
-        }
-    })
-    .then((response) => response.data.map((review: Review) => new Review(review)));
+async function getReviewsByMovieId(id: string) {
+  const res = await fetch(baseUrl + '/reviews?movieId=' + id)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json()
+}
 
 export default getReviewsByMovieId;

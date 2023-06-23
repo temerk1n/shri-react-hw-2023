@@ -1,8 +1,13 @@
-import httpClient from "@/api/httpClient";
-import Review from "@/entities/Review";
+import baseUrl from "@/api/baseUrl";
 
-const getAllReviews = () => httpClient
-    .get('/reviews')
-    .then((response) => response.data.map((review: Review) => new Review(review)));
+async function getAllReviews() {
+  const res = await fetch(baseUrl + '/reviews')
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json()
+}
 
 export default getAllReviews;

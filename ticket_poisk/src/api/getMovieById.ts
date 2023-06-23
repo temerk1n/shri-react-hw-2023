@@ -1,12 +1,13 @@
-import httpClient from "@/api/httpClient";
-import Movie from "@/entities/Movie";
+import baseUrl from "@/api/baseUrl";
 
-const getMovieById = (id: string) => httpClient
-    .get('/movie', {
-        params: {
-            movieId: id,
-        }
-    })
-    .then((response) => new Movie(response.data));
+async function getMovieById(id: string) {
+  const res = await fetch(baseUrl + '/movie?movieId=' + id)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json()
+}
 
 export default getMovieById;

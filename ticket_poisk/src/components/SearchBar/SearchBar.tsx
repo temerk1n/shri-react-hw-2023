@@ -1,3 +1,4 @@
+"use client"
 import Input from "@/components/Input/Input";
 import { useState } from "react";
 import styles from './SearchBar.module.css'
