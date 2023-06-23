@@ -3,6 +3,8 @@
     padding: 1.5rem;
     background-color: white;
     border-radius: 8px;
+    width: 100%;
+    height: fit-content;
 }
 
 .container-row {
