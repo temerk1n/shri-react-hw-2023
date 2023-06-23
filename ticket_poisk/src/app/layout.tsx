@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Metadata } from "next";
-import styles from "./layout.module.css";
+import styles from "./layout&loading.module.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { Roboto } from "next/font/google";

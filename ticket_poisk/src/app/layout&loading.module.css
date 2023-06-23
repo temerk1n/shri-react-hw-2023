@@ -9,9 +9,13 @@
 .content {
   display: flex;
   flex-direction: row;
-  gap: 1.44rem;
+  gap: 1.5rem;
   margin-top: 85px;
   padding: 1.5rem 2rem;
   line-height: 1.5rem;
   color: #1b1f23;
+}
+
+.loading {
+  margin: auto;
 }
