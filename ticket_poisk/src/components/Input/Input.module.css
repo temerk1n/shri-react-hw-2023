@@ -21,34 +21,31 @@
 
 .input:focus-visible {
   outline: none;
-  color: #1b1f23;
   border: 1px solid #f50;
 }
 
 .input:focus-visible::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
   color: #1b1f23;
 }
+
 .input:focus-visible:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
   color: #1b1f23;
   opacity: 1;
 }
+
 .input:focus-visible::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
   color: #1b1f23;
   opacity: 1;
 }
+
 .input:focus-visible:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
   color: #1b1f23;
 }
+
 .input:focus-visible::-ms-input-placeholder {
-  /* Microsoft Edge */
   color: #1b1f23;
 }
 
 .input:focus-visible::placeholder {
-  /* Most modern browsers support this now. */
   color: #1b1f23;
 }
