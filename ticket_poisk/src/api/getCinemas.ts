@@ -1,4 +1,5 @@
 import baseUrl from "@/api/baseUrl";
+import Cinema from "@/entities/Cinema";
 
 async function getCinemas() {
   const res = await fetch(baseUrl + "/cinemas");
@@ -7,7 +8,9 @@ async function getCinemas() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  return res.json().then((cinemas) => {
+    return cinemas.map((cinema: Cinema) => new Cinema(cinema));
+  });
 }
 
 export default getCinemas;

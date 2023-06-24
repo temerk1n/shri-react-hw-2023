@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.select {
+    display: flex;
+    padding: 0.625rem 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+
+    border-radius: 8px;
+    border: 1px solid #e1e3e6;
+    background: #fff;
+
+    font-size: 0.875rem;
+}
+
+.select:focus {
+    border: 1px solid #f50;
+}
+
+.option {
+    padding: 0.75rem;
+}
