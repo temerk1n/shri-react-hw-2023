@@ -4,6 +4,7 @@ import getAllMovies from "@/api/getAllMovies";
 import Movie from "@/entities/Movie";
 import Cinema from "@/entities/Cinema";
 import getCinemas from "@/api/getCinemas";
+import styles from "./mainPage.module.css";
 
 export default async function Home() {
   let movies: Movie[] = await getAllMovies();
@@ -12,7 +13,9 @@ export default async function Home() {
   return (
     <>
       <SearchBar cinemas={cinemas} />
-      <TicketCardList movies={movies} />
+      <div className={styles.list}>
+        <TicketCardList movies={movies} />
+      </div>
     </>
   );
 }
