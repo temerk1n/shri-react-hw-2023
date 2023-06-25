@@ -29,7 +29,8 @@
 }
 
 .buttonWithText {
-  font-family: "Roboto", sans-serif;
+  height: fit-content;
+  width: fit-content;
   font-weight: 500;
   font-size: 0.875rem;
   padding: 10px 16px;

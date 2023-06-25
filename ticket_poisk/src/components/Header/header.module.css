@@ -10,3 +10,8 @@
   position: fixed;
   width: 100%;
 }
+
+.basket {
+  display: flex;
+  gap: 0.5rem;
+}

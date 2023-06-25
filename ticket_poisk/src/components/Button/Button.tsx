@@ -5,7 +5,7 @@ import classNames from "classnames";
 interface ButtonProps {
   text?: string;
   iconUrl?: string;
-  onClick: () => void;
+  onClick?: () => void;
   isDeleteButton?: boolean;
 }
 
