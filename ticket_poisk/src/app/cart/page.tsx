@@ -15,7 +15,9 @@ export default function Cart() {
 
   if (isLoading) return <Loading />;
 
-  const tickets = data.filter((movie: Movie) => {
+  let movies: Movie[] = data.map((movie: Movie) => new Movie(movie));
+
+  const tickets = movies.filter((movie: Movie) => {
     return movie.id in cart;
   });
 

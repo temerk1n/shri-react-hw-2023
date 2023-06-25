@@ -22,7 +22,9 @@ export default function Home() {
 
   if (moviesResponse.isLoading || cinemasResponse.isLoading) return <Loading />;
 
-  let movies: Movie[] = moviesResponse.data;
+  let movies: Movie[] = moviesResponse.data.map(
+    (movie: Movie) => new Movie(movie)
+  );
   const cinemas: Cinema[] = cinemasResponse.data;
 
   // if (genre) {
