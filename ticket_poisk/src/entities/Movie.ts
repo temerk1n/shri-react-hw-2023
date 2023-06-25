@@ -13,7 +13,7 @@ interface MovieProps {
 function translate(word: string): string {
   switch (word) {
     case "action":
-      return "Экшн";
+      return "Боевик";
     case "comedy":
       return "Комедия";
     case "fantasy":
