@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface State {
+export interface CartState {
   [key: string]: number;
   amount: number;
 }
 
-const initialState: State = {
+const initialState: CartState = {
   amount: 0,
 };
 
@@ -22,7 +22,7 @@ const cartSlice = createSlice({
       state.amount += 1;
       state[payload] = count + 1;
     },
-    decrement: (state, { payload }) => {
+    decrement: (state, { payload }: PayloadAction<string>) => {
       const count = state[payload] || 0;
 
       if (!count) {
@@ -40,8 +40,9 @@ const cartSlice = createSlice({
 
       state[payload] = count - 1;
     },
-    reset: () => {
-      return initialState;
+    reset: (state, { payload }: PayloadAction<string>) => {
+      state.amount -= state[payload];
+      delete state[payload];
     },
   },
 });

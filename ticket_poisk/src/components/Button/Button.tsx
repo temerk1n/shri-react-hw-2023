@@ -7,6 +7,7 @@ interface ButtonProps {
   iconUrl?: string;
   onClick?: () => void;
   isDeleteButton?: boolean;
+  imageSize?: number;
 }
 
 export default function Button({
@@ -14,9 +15,8 @@ export default function Button({
   iconUrl,
   onClick,
   isDeleteButton,
+  imageSize = 12,
 }: ButtonProps) {
-  const size = "12";
-
   return (
     <button
       className={classNames(
@@ -30,7 +30,7 @@ export default function Button({
       onClick={onClick}
     >
       {iconUrl ? (
-        <Image src={iconUrl} alt="" width={size} height={size} />
+        <Image src={iconUrl} alt="" width={imageSize} height={imageSize} />
       ) : (
         text
       )}
