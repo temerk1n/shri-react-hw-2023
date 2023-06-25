@@ -1,11 +1,14 @@
 "use client";
+
 import styles from "./TicketCard.module.css";
 import Button from "@/components/Button/Button";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ButtonsBlock from "@/components/ButtonsBlock/ButtonsBlock";
 import Container from "@/components/Container/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTicketAmount } from "@/store/features/cart/selector";
+import { cartActions } from "@/store/features/cart";
 
 interface TicketProps {
   id: string;
@@ -16,7 +19,17 @@ interface TicketProps {
 }
 
 export default function TicketCard(ticketProps: TicketProps) {
-  const [countOfTickets, setCountOfTickets] = useState(0);
+  const ticketAmount = useSelector((state) =>
+    selectTicketAmount(state, ticketProps.id)
+  );
+  const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch(cartActions.increment(ticketProps.id));
+  };
+  const decrement = () => {
+    dispatch(cartActions.decrement(ticketProps.id));
+  };
 
   return (
     <Container flexDirection="row" gap="1.5rem">
@@ -34,8 +47,9 @@ export default function TicketCard(ticketProps: TicketProps) {
           <div className={styles.genre}>{ticketProps.genre}</div>
         </div>
         <ButtonsBlock
-          countOfTickets={countOfTickets}
-          setCountOfTickets={setCountOfTickets}
+          countOfTickets={ticketAmount}
+          increment={increment}
+          decrement={decrement}
         />
         {ticketProps.showDeleteButton && (
           <div className={styles.deleteButtonBlock}>

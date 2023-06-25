@@ -1,4 +1,3 @@
-"use client";
 import MovieCard from "@/components/MovieCard/MovieCard";
 import getMovieById from "@/api/getMovieById";
 import ReviewCardList from "@/components/ReviewCardList/ReviewCardList";
