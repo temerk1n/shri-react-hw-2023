@@ -1,6 +1,6 @@
 "use client";
 import Input from "@/components/Input/Input";
-import { useState } from "react";
+import { ChangeEvent } from "react";
 import styles from "./SearchBar.module.css";
 import Container from "@/components/Container/Container";
 import Select, { SelectOptions } from "@/components/Select/Select";
@@ -15,11 +15,15 @@ const genres: SelectOptions = [
 
 interface SearchBarProps {
   cinemas: Cinema[];
+  title: string;
+  onChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default async function SearchBar({ cinemas }: SearchBarProps) {
-  const [title, setTitle] = useState("");
-
+export default async function SearchBar({
+  cinemas,
+  title,
+  onChangeTitle,
+}: SearchBarProps) {
   const optionsFromCinemas: SelectOptions = cinemas.map((cinema) => [
     cinema.id,
     cinema.name,
@@ -35,7 +39,7 @@ export default async function SearchBar({ cinemas }: SearchBarProps) {
             type="text"
             placeholder="Введите название"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={onChangeTitle}
           />
           <Select label="Жанр" defaultOption="Выберите жанр" options={genres} />
           <Select
