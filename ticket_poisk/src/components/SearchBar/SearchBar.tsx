@@ -4,7 +4,6 @@ import { useState } from "react";
 import styles from "./SearchBar.module.css";
 import Container from "@/components/Container/Container";
 import Select, { SelectOptions } from "@/components/Select/Select";
-import getCinemas from "@/api/getCinemas";
 import Cinema from "@/entities/Cinema";
 
 const genres: SelectOptions = [
@@ -14,9 +13,12 @@ const genres: SelectOptions = [
   ["Fantasy", "Фэнтези"],
 ];
 
-export default async function SearchBar() {
+interface SearchBarProps {
+  cinemas: Cinema[];
+}
+
+export default async function SearchBar({ cinemas }: SearchBarProps) {
   const [title, setTitle] = useState("");
-  const cinemas: Cinema[] = await getCinemas();
 
   const optionsFromCinemas: SelectOptions = cinemas.map((cinema) => [
     cinema.id,

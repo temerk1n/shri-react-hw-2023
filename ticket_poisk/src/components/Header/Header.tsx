@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <Link href="/">Билетопоиск</Link>
       <Link href="/cart">
-        <Image src="/cartIcon.svg" alt="cart" width="32" height="32" />
+        <Image src="/basket.svg" alt="cart" width="32" height="32" />
       </Link>
     </header>
   );
