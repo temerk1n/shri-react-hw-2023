@@ -9,7 +9,7 @@
     display: flex;
     padding: 0.625rem 1rem;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
     align-self: stretch;
 
     border-radius: 8px;
@@ -17,12 +17,31 @@
     background: #fff;
 
     font-size: 0.875rem;
+    color: #999FA6;
+}
+
+.activeSelect {
+    color: #1B1F23;
 }
 
 .select:focus {
     border: 1px solid #f50;
 }
 
-.option {
-    padding: 0.75rem;
+.button {
+    cursor: pointer;
+    border: 0 solid;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.content {
+    position: absolute;
+    background: white;
+    display: flex;
+    align-self: stretch;
+    border: 1px solid #E1E3E6;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 0.5rem;
 }

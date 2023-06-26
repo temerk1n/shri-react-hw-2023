@@ -11,7 +11,7 @@ import Movie from "@/entities/Movie";
 
 export default function Cart() {
   const cart = useSelector((state) => selectCartModule(state));
-  const { data, isLoading } = useGetMoviesQuery();
+  const { data, isLoading } = useGetMoviesQuery(null);
 
   if (isLoading) return <Loading />;
 

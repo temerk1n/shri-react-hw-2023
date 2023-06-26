@@ -1,0 +1,22 @@
+.input {
+    display: none;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    color: #1b1f23;
+}
+
+.label:hover {
+    background: #349beb;
+    color: white;
+}
+
+.input:checked + label {
+    background: #999FA6;
+}

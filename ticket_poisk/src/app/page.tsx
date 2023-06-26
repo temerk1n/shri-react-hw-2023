@@ -5,6 +5,7 @@ import SearchBar from "@/components/SearchBar/SearchBar";
 import styles from "./mainPage.module.css";
 import {
   useGetCinemasQuery,
+  useGetMoviesByCinemaIdQuery,
   useGetMoviesQuery,
 } from "@/store/services/movieApi";
 import Loading from "@/app/loading";
@@ -14,22 +15,37 @@ import Cinema from "@/entities/Cinema";
 
 export default function Home() {
   const [title, setTitle] = useState("");
-  // const [genre, setGenre] = useState("");
-  // const [cinema, setCinema] = useState("");
+  const [genre, setGenre] = useState("");
+  const [cinema, setCinema] = useState("");
 
-  const moviesResponse = useGetMoviesQuery();
-  const cinemasResponse = useGetCinemasQuery();
-
-  if (moviesResponse.isLoading || cinemasResponse.isLoading) return <Loading />;
+  const moviesResponse = useGetMoviesQuery(null);
+  const cinemasResponse = useGetCinemasQuery(null);
+  const moviesByCinemaResponse = useGetMoviesByCinemaIdQuery(cinema);
+  if (
+    moviesResponse.isLoading ||
+    cinemasResponse.isLoading ||
+    moviesByCinemaResponse.isLoading
+  )
+    return <Loading />;
 
   let movies: Movie[] = moviesResponse.data.map(
     (movie: Movie) => new Movie(movie)
   );
+  const genres = new Set<string>();
+  movies.forEach((movie) => {
+    genres.add(movie.genre);
+  });
   const cinemas: Cinema[] = cinemasResponse.data;
 
-  // if (genre) {
-  //   movies = movies.filter((movie: Movie) => movie.genre === genre);
-  // }
+  // filter
+  if (cinema) {
+    movies = moviesByCinemaResponse.data.map(
+      (movie: Movie) => new Movie(movie)
+    );
+  }
+  if (genre) {
+    movies = movies.filter((movie: Movie) => movie.genre === genre);
+  }
   if (title) {
     movies = movies.filter((movie: Movie) =>
       movie.title.toLowerCase().includes(title.toLowerCase())
@@ -40,8 +56,13 @@ export default function Home() {
     <>
       <SearchBar
         cinemas={cinemas}
+        genres={genres}
         title={title}
         onChangeTitle={(e) => setTitle(e.target.value)}
+        genre={genre}
+        onChangeGenre={(e) => setGenre(e.target.value)}
+        cinema={cinema}
+        onChangeCinema={(e) => setCinema(e.target.value)}
       />
       <div className={styles.list}>
         <TicketCardList movies={movies} />

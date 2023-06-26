@@ -54,6 +54,7 @@ export default function TicketCard(ticketProps: TicketProps) {
           alt="poster"
           width="100"
           height="120"
+          style={{ borderRadius: "8px" }}
         />
         <div className={styles.info}>
           <div className={styles.description}>

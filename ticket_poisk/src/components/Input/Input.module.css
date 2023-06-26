@@ -19,6 +19,33 @@
   font-size: 0.875rem;
 }
 
+
+.input::-webkit-input-placeholder {
+  color: #999FA6;
+}
+
+.input:-moz-placeholder {
+  color: #999FA6;
+  opacity: 1;
+}
+
+.input::-moz-placeholder {
+  color: #999FA6;
+  opacity: 1;
+}
+
+.input:-ms-input-placeholder {
+  color: #999FA6;
+}
+
+.input::-ms-input-placeholder {
+  color: #999FA6;
+}
+
+.input::placeholder {
+  color: #999FA6;
+}
+
 .input:focus-visible {
   outline: none;
   border: 1px solid #f50;
