@@ -4,6 +4,7 @@ import styles from "./SearchBar.module.css";
 import Container from "@/components/Container/Container";
 import Select, { SelectOptions } from "@/components/Select/Select";
 import Cinema from "@/entities/Cinema";
+import translateGenre from "@/utils/translateGenre";
 
 interface SearchBarProps {
   cinemas: Cinema[];
@@ -36,7 +37,7 @@ export default async function SearchBar({
   const optionsFromGenres: SelectOptions = Array.from(genres).map((genre) => {
     return {
       id: genre,
-      name: genre,
+      name: translateGenre(genre),
     };
   });
   optionsFromGenres.unshift({ id: "", name: "Любой" });

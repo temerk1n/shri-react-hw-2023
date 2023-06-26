@@ -1,5 +1,6 @@
 import baseUrl from "@/api/baseUrl";
 import Movie from "@/entities/Movie";
+import translateGenre from "@/utils/translateGenre";
 
 async function getAllMovies() {
   const res = await fetch(baseUrl + "/movies");
@@ -9,7 +10,7 @@ async function getAllMovies() {
   }
 
   return res.json().then((movies) => {
-    return movies.map((movie: Movie) => new Movie(movie));
+    return movies.map((movie: Movie) => translateGenre(movie));
   });
 }
 

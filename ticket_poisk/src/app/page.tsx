@@ -28,9 +28,7 @@ export default function Home() {
   )
     return <Loading />;
 
-  let movies: Movie[] = moviesResponse.data.map(
-    (movie: Movie) => new Movie(movie)
-  );
+  let movies: Movie[] = moviesResponse.data;
   const genres = new Set<string>();
   movies.forEach((movie) => {
     genres.add(movie.genre);
@@ -39,9 +37,7 @@ export default function Home() {
 
   // filter
   if (cinema) {
-    movies = moviesByCinemaResponse.data.map(
-      (movie: Movie) => new Movie(movie)
-    );
+    movies = moviesByCinemaResponse.data;
   }
   if (genre) {
     movies = movies.filter((movie: Movie) => movie.genre === genre);

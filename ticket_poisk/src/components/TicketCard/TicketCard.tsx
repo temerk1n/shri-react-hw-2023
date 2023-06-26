@@ -12,6 +12,7 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import ResetTicketsModal from "@/components/ResetTicketsModal/ResetTicketsModal";
 import ResetButtonBlock from "@/components/ResetButtonBlock/ResetButtonBlock";
+import translateGenre from "@/utils/translateGenre";
 
 interface TicketProps {
   id: string;
@@ -61,7 +62,9 @@ export default function TicketCard(ticketProps: TicketProps) {
             <div className={styles.title}>
               <Link href={"/movie/" + ticketProps.id}>{ticketProps.title}</Link>
             </div>
-            <div className={styles.genre}>{ticketProps.genre}</div>
+            <div className={styles.genre}>
+              {translateGenre(ticketProps.genre)}
+            </div>
           </div>
           <ButtonsBlock
             countOfTickets={ticketAmount}
