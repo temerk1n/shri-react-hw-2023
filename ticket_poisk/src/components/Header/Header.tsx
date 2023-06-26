@@ -13,7 +13,7 @@ export default function Header() {
     <header className={styles.header}>
       <Link href="/">Билетопоиск</Link>
       <Link href="/cart" className={styles.basket}>
-        <Button text={cart.amount} />
+        <Button text={cart.amount} variant="primary" basket={true} />
         <Image src="/basket.svg" alt="cart" width="32" height="32" />
       </Link>
     </header>

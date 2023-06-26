@@ -4,19 +4,26 @@ import classNames from "classnames";
 
 interface ButtonProps {
   text?: string;
+  variant?: string;
   iconUrl?: string;
   onClick?: () => void;
   isDeleteButton?: boolean;
   imageSize?: number;
+  basket?: boolean;
 }
 
 export default function Button({
   text,
+  variant,
   iconUrl,
   onClick,
   isDeleteButton,
   imageSize = 12,
+  basket,
 }: ButtonProps) {
+  let style;
+  if (variant) style = styles[variant];
+  if (basket) style = styles.basket;
   return (
     <button
       className={classNames(
@@ -25,7 +32,8 @@ export default function Button({
           ? styles.deleteButton
           : iconUrl
           ? styles.buttonWithIcon
-          : styles.buttonWithText
+          : styles.buttonWithText,
+        style
       )}
       onClick={onClick}
     >

@@ -13,7 +13,7 @@ export default function ResetTicketsModal({
   reset,
 }: ResetTicketsModalProps) {
   return (
-    <Modal>
+    <Modal onClose={showModal}>
       <div className={styles.content}>
         <div className={styles.title}>
           <h3>Удаление билета</h3>
@@ -22,8 +22,8 @@ export default function ResetTicketsModal({
         <div>Вы уверены, что хотите удалить билет?</div>
       </div>
       <div className={styles.buttons}>
-        <Button text="Да" onClick={reset} />
-        <Button text="Нет" onClick={showModal} />
+        <Button text="Да" onClick={reset} variant="primary" />
+        <Button text="Нет" onClick={showModal} variant="outline" />
       </div>
     </Modal>
   );
