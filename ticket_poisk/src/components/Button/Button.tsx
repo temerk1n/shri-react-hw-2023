@@ -10,6 +10,7 @@ interface ButtonProps {
   isDeleteButton?: boolean;
   imageSize?: number;
   basket?: boolean;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -20,6 +21,7 @@ export default function Button({
   isDeleteButton,
   imageSize = 12,
   basket,
+  disabled = false,
 }: ButtonProps) {
   let style;
   if (variant) style = styles[variant];
@@ -36,6 +38,7 @@ export default function Button({
         style
       )}
       onClick={onClick}
+      disabled={disabled}
     >
       {iconUrl ? (
         <Image src={iconUrl} alt="" width={imageSize} height={imageSize} />

@@ -1,6 +1,4 @@
 import baseUrl from "@/api/baseUrl";
-import Movie from "@/entities/Movie";
-import translateGenre from "@/utils/translateGenre";
 
 async function getMovieById(id: string) {
   const res = await fetch(baseUrl + "/movie?movieId=" + id);
@@ -9,7 +7,7 @@ async function getMovieById(id: string) {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json().then((movie: Movie) => translateGenre(movie));
+  return res.json();
 }
 
 export default getMovieById;

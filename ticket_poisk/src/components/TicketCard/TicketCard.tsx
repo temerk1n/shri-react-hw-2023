@@ -6,7 +6,10 @@ import Image from "next/image";
 import ButtonsBlock from "@/components/ButtonsBlock/ButtonsBlock";
 import Container from "@/components/Container/Container";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTicketAmount } from "@/store/features/cart/selector";
+import {
+  selectCartModule,
+  selectTicketAmount,
+} from "@/store/features/cart/selector";
 import { cartActions } from "@/store/features/cart";
 import { useState } from "react";
 import { createPortal } from "react-dom";
@@ -29,7 +32,11 @@ export default function TicketCard(ticketProps: TicketProps) {
   const ticketAmount = useSelector((state) =>
     selectTicketAmount(state, ticketProps.id)
   );
+  const cart = useSelector((state) => selectCartModule(state));
   const dispatch = useDispatch();
+
+  const minusDisabled = ticketAmount === 0 || cart.amount === 0;
+  const plusDisabled = cart.amount === 30;
 
   const increment = () => {
     dispatch(cartActions.increment(ticketProps.id));
@@ -70,6 +77,8 @@ export default function TicketCard(ticketProps: TicketProps) {
             countOfTickets={ticketAmount}
             increment={increment}
             decrement={decrement}
+            plusDisabled={plusDisabled}
+            minusDisabled={minusDisabled}
           />
           {ticketProps.showDeleteButton && (
             <ResetButtonBlock showModal={showModal} />
