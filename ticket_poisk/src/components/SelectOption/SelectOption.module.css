@@ -16,7 +16,3 @@
     background: #349beb;
     color: white;
 }
-
-.input:checked + label {
-    background: #999FA6;
-}

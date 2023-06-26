@@ -54,11 +54,20 @@ export default function Home() {
         cinemas={cinemas}
         genres={genres}
         title={title}
-        onChangeTitle={(e) => setTitle(e.target.value)}
+        onChangeTitle={(e) => {
+          e.preventDefault();
+          setTitle(e.target.value);
+        }}
         genre={genre}
-        onChangeGenre={(e) => setGenre(e.target.value)}
+        onChangeGenre={(e) => {
+          e.preventDefault();
+          setGenre(e.target.value);
+        }}
         cinema={cinema}
-        onChangeCinema={(e) => setCinema(e.target.value)}
+        onChangeCinema={(e) => {
+          e.preventDefault();
+          setCinema(e.target.value);
+        }}
       />
       <div className={styles.list}>
         <TicketCardList movies={movies} />

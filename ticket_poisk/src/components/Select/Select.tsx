@@ -35,7 +35,8 @@ export default function Select({
     (option: SelectOption) => option.id === value
   )?.name;
 
-  const toggle = () => {
+  const toggle = (e: any) => {
+    e.preventDefault();
     setIsShowing(!isShowing);
   };
 
@@ -47,7 +48,10 @@ export default function Select({
           name={name}
           value={option.id}
           label={option.name}
-          onClick={onChangeValue}
+          onClick={(e) => {
+            setIsShowing(!isShowing);
+            onChangeValue(e);
+          }}
         />
       ))}
     </div>
@@ -73,7 +77,11 @@ export default function Select({
           />
         </button>
       </div>
-      {isShowing && createPortal(selectOptions, document.body)}
+      {isShowing &&
+        createPortal(
+          selectOptions,
+          document.getElementById(selectId) as Element
+        )}
     </div>
   );
 }

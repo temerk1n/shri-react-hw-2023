@@ -6,6 +6,7 @@
 }
 
 .select {
+    position: relative;
     display: flex;
     padding: 0.625rem 1rem;
     align-items: center;
@@ -37,6 +38,13 @@
 
 .content {
     position: absolute;
+    top: 2.875rem;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    max-height: 300px;
+    overflow: auto;
+
     background: white;
     display: flex;
     align-self: stretch;
