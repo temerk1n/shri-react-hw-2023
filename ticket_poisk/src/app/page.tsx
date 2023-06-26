@@ -9,7 +9,7 @@ import {
   useGetMoviesQuery,
 } from "@/store/services/movieApi";
 import Loading from "@/app/loading";
-import { useState } from "react";
+import { startTransition, useState } from "react";
 import Movie from "@/entities/Movie";
 import Cinema from "@/entities/Cinema";
 
@@ -56,17 +56,17 @@ export default function Home() {
         title={title}
         onChangeTitle={(e) => {
           e.preventDefault();
-          setTitle(e.target.value);
+          startTransition(() => setTitle(e.target.value));
         }}
         genre={genre}
         onChangeGenre={(e) => {
           e.preventDefault();
-          setGenre(e.target.value);
+          startTransition(() => setGenre(e.target.value));
         }}
         cinema={cinema}
         onChangeCinema={(e) => {
           e.preventDefault();
-          setCinema(e.target.value);
+          startTransition(() => setCinema(e.target.value));
         }}
       />
       <div className={styles.list}>
